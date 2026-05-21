@@ -3,7 +3,7 @@
 ## Tech Stack
 - Laravel - Frontend
 - React Vite - Backend
-- Storage (Persistent Storage) -DB upgrade coming soon
+- Storage SQLite - DB upgrade to Postgres coming soon
 
 ## How to Run
 1. Fork the repo `https://github.com/WayneCarlG/todo-app.git`
