@@ -1,9 +1,6 @@
 # Laravel Todo App
 
 ## Tech Stack
-<!-- - Laravel - Frontend
-- React Vite - Backend
-- Storage SQLite - DB upgrade to Postgres coming soon -->
 |Stack          |Language/Framework|
 |:--------------|:-----------------|
 |Frontend       |Laravel           |
