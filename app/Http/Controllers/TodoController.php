@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth')->except([]);
+    // }
+
     public function index()
     {
-        $todos = Todo::latest()->get();
+        $todos = auth()->user()->todos()->latest()->get();
+
         return view('todos.index', compact('todos'));
     }
 
@@ -28,24 +34,29 @@ class TodoController extends Controller
         Todo::create([
             'title'       => $request->title,
             'description' => $request->description,
+            'user_id'     => auth()->id(),        // ← Important
         ]);
 
         return redirect()->route('todos.index')
                          ->with('success', 'Todo created successfully!');
     }
 
-    public function show(Todo $todo)
-    {
-        return view('todos.show', compact('todo'));
-    }
-
     public function edit(Todo $todo)
     {
+        // Security: Prevent editing other users' todos
+        if ($todo->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized');
+        }
+
         return view('todos.edit', compact('todo'));
     }
 
     public function update(Request $request, Todo $todo)
     {
+        if ($todo->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized');
+        }
+
         $request->validate([
             'title'       => 'required|string|max:255',
             'description' => 'nullable|string|max:1000',
@@ -62,6 +73,10 @@ class TodoController extends Controller
 
     public function toggle(Todo $todo)
     {
+        if ($todo->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized');
+        }
+
         $todo->update(['completed' => !$todo->completed]);
 
         return redirect()->route('todos.index')
@@ -70,6 +85,10 @@ class TodoController extends Controller
 
     public function destroy(Todo $todo)
     {
+        if ($todo->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized');
+        }
+
         $todo->delete();
 
         return redirect()->route('todos.index')

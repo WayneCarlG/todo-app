@@ -12,10 +12,17 @@ class Todo extends Model
 	protected $fillable = [
 		'title',
 		'description',
-		'completed'
+		'completed',
+		'user_id'
 	];
 
 	protected $casts = [
 		'completed' => 'boolean',
 	];
+
+	//Relationship: A Todo belongs to a User
+	public function user()
+	{
+		return $this->belongsTo(User::class);
+	}
 }

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/react-starter-kit',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '5da77081e0e4e39c556659a6ec276dd47349d848',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -442,6 +442,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'laravel/breeze' => array(
+            'pretty_version' => 'v2.4.2',
+            'version' => '2.4.2.0',
+            'reference' => '4f20e7b2cc8d25daa85d8647241a89c8e0930305',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/breeze',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'laravel/chisel' => array(
             'pretty_version' => 'v0.1.1',
             'version' => '0.1.1.0',
@@ -524,9 +533,9 @@
             'dev_requirement' => false,
         ),
         'laravel/react-starter-kit' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '5da77081e0e4e39c556659a6ec276dd47349d848',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

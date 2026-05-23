@@ -34,4 +34,10 @@ class User extends Authenticatable implements PasskeyUser
             'two_factor_confirmed_at' => 'datetime',
         ];
     }
+
+    // Relationship: One user has many todos
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+    }
 }

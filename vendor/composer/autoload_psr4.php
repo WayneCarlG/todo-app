@@ -87,6 +87,7 @@ return array(
     'Laravel\\Mcp\\' => array($vendorDir . '/laravel/mcp/src'),
     'Laravel\\Fortify\\' => array($vendorDir . '/laravel/fortify/src'),
     'Laravel\\Chisel\\' => array($vendorDir . '/laravel/chisel/src'),
+    'Laravel\\Breeze\\' => array($vendorDir . '/laravel/breeze/src'),
     'Laravel\\Boost\\' => array($vendorDir . '/laravel/boost/src'),
     'Laravel\\AgentDetector\\' => array($vendorDir . '/laravel/agent-detector/src'),
     'Inertia\\' => array($vendorDir . '/inertiajs/inertia-laravel/src'),

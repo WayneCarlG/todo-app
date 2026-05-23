@@ -158,6 +158,7 @@ class ComposerStaticInit1a17331f6ae4b047c72cbb843937bded
             'Laravel\\Mcp\\' => 12,
             'Laravel\\Fortify\\' => 16,
             'Laravel\\Chisel\\' => 15,
+            'Laravel\\Breeze\\' => 15,
             'Laravel\\Boost\\' => 14,
             'Laravel\\AgentDetector\\' => 22,
         ),
@@ -545,6 +546,10 @@ class ComposerStaticInit1a17331f6ae4b047c72cbb843937bded
         array (
             0 => __DIR__ . '/..' . '/laravel/chisel/src',
         ),
+        'Laravel\\Breeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
         'Laravel\\Boost\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/boost/src',
@@ -689,6 +694,7 @@ class ComposerStaticInit1a17331f6ae4b047c72cbb843937bded
         'App\\Http\\Controllers\\Teams\\TeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teams/TeamController.php',
         'App\\Http\\Controllers\\Teams\\TeamInvitationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teams/TeamInvitationController.php',
         'App\\Http\\Controllers\\Teams\\TeamMemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teams/TeamMemberController.php',
+        'App\\Http\\Controllers\\TodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TodoController.php',
         'App\\Http\\Middleware\\EnsureTeamMembership' => __DIR__ . '/../..' . '/app/Http/Middleware/EnsureTeamMembership.php',
         'App\\Http\\Middleware\\HandleAppearance' => __DIR__ . '/../..' . '/app/Http/Middleware/HandleAppearance.php',
         'App\\Http\\Middleware\\HandleInertiaRequests' => __DIR__ . '/../..' . '/app/Http/Middleware/HandleInertiaRequests.php',
@@ -711,6 +717,7 @@ class ComposerStaticInit1a17331f6ae4b047c72cbb843937bded
         'App\\Models\\Membership' => __DIR__ . '/../..' . '/app/Models/Membership.php',
         'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
         'App\\Models\\TeamInvitation' => __DIR__ . '/../..' . '/app/Models/TeamInvitation.php',
+        'App\\Models\\Todo' => __DIR__ . '/../..' . '/app/Models/Todo.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Notifications\\Teams\\TeamInvitation' => __DIR__ . '/../..' . '/app/Notifications/Teams/TeamInvitation.php',
         'App\\Policies\\TeamPolicy' => __DIR__ . '/../..' . '/app/Policies/TeamPolicy.php',
@@ -3579,6 +3586,12 @@ class ComposerStaticInit1a17331f6ae4b047c72cbb843937bded
         'Laravel\\Boost\\Support\\Composer' => __DIR__ . '/..' . '/laravel/boost/src/Support/Composer.php',
         'Laravel\\Boost\\Support\\Config' => __DIR__ . '/..' . '/laravel/boost/src/Support/Config.php',
         'Laravel\\Boost\\Support\\Npm' => __DIR__ . '/..' . '/laravel/boost/src/Support/Npm.php',
+        'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
+        'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
+        'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
+        'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
+        'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
+        'Laravel\\Breeze\\Console\\InstallsLivewireStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsLivewireStack.php',
         'Laravel\\Chisel\\Ast\\Source' => __DIR__ . '/..' . '/laravel/chisel/src/Ast/Source.php',
         'Laravel\\Chisel\\Ast\\Visitors\\InteractsWithNodes' => __DIR__ . '/..' . '/laravel/chisel/src/Ast/Visitors/InteractsWithNodes.php',
         'Laravel\\Chisel\\Ast\\Visitors\\RemoveImportVisitor' => __DIR__ . '/..' . '/laravel/chisel/src/Ast/Visitors/RemoveImportVisitor.php',

@@ -1,67 +1,83 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-white shadow rounded-lg p-8">
-        <div class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">My Todos</h1>
-            <a href="{{ route('todos.create') }}" 
-               class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg flex items-center gap-2">
-                <i class="fas fa-plus"></i> New Todo
-            </a>
-        </div>
-
-        @if (session('success'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                {{ session('success') }}
+    <div class="py-12">
+        <div class="max-w-4xl mx-auto px-6">
+            <!-- Your todo content here -->
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-4xl font-bold">My Tasks</h1>
+                <a href="{{ route('todos.create') }}" 
+                   class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-2xl flex items-center gap-2">
+                    <i class="fas fa-plus"></i> New Task
+                </a>
             </div>
-        @endif
 
-        @if ($todos->isEmpty())
-            <p class="text-gray-500 text-center py-10">No todos yet. Create one above!</p>
-        @else
-            <div class="space-y-3">
-                @foreach ($todos as $todo)
-                    <div class="flex items-center justify-between bg-gray-50 hover:bg-gray-100 p-4 rounded-xl border">
-                        <div class="flex items-center gap-4">
-                            <form action="{{ route('todos.toggle', $todo) }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <button type="submit" 
-                                        class="w-7 h-7 rounded-full border-2 flex items-center justify-center
-                                        {{ $todo->completed ? 'bg-green-500 border-green-500' : 'border-gray-300' }}">
-                                    @if ($todo->completed)
-                                        <i class="fas fa-check text-white text-sm"></i>
+            @if (session('success'))
+                <div class="bg-emerald-100 dark:bg-emerald-900/50 border border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300 px-6 py-4 rounded-2xl mb-8">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if ($todos->isEmpty())
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-16 text-center">
+                    <i class="fas fa-clipboard-list text-6xl text-gray-300 dark:text-gray-600 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-gray-500 dark:text-gray-400">No tasks yet</h3>
+                    <p class="text-gray-400 mt-3">Create your first task to get started</p>
+                </div>
+            @else
+                <div class="space-y-4">
+                    @foreach ($todos as $todo)
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all group">
+                            <div class="flex items-start gap-5">
+                                <!-- Checkbox -->
+                                <form action="{{ route('todos.toggle', $todo) }}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" 
+                                            class="mt-1 w-8 h-8 rounded-2xl border-2 flex items-center justify-center transition-all
+                                            {{ $todo->completed 
+                                                ? 'bg-emerald-500 border-emerald-500' 
+                                                : 'border-gray-300 dark:border-gray-600 group-hover:border-indigo-400' }}">
+                                        @if ($todo->completed)
+                                            <i class="fas fa-check text-white text-lg"></i>
+                                        @endif
+                                    </button>
+                                </form>
+
+                                <!-- Content -->
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-lg font-medium text-gray-900 dark:text-white break-words
+                                        {{ $todo->completed ? 'line-through text-gray-400 dark:text-gray-500' : '' }}">
+                                        {{ $todo->title }}
+                                    </p>
+                                    @if ($todo->description)
+                                        <p class="text-gray-600 dark:text-gray-400 mt-2 text-[15px]">
+                                            {{ $todo->description }}
+                                        </p>
                                     @endif
-                                </button>
-                            </form>
+                                </div>
 
-                            <div>
-                                <p class="{{ $todo->completed ? 'line-through text-gray-400' : 'text-gray-800 font-medium' }}">
-                                    {{ $todo->title }}
-                                </p>
-                                @if ($todo->description)
-                                    <p class="text-sm text-gray-500 mt-1">{{ $todo->description }}</p>
-                                @endif
+                                <!-- Actions -->
+                                <div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-all">
+                                    <a href="{{ route('todos.edit', $todo) }}" 
+                                       class="p-3 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-gray-700 rounded-2xl">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="{{ route('todos.destroy', $todo) }}" method="POST"
+                                          onsubmit="return confirm('Delete this task?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" 
+                                                class="p-3 text-gray-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-gray-700 rounded-2xl">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-2">
-                            <a href="{{ route('todos.edit', $todo) }}" 
-                               class="text-blue-600 hover:text-blue-800 px-3 py-1">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('todos.destroy', $todo) }}" method="POST" 
-                                  onsubmit="return confirm('Delete this todo?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-red-600 hover:text-red-800 px-3 py-1">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @endif
+                    @endforeach
+                </div>
+            @endif
+        </div>
     </div>
 @endsection
