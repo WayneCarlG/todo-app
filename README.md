@@ -1,9 +1,14 @@
 # Laravel Todo App
 
 ## Tech Stack
-- Laravel - Frontend
+<!-- - Laravel - Frontend
 - React Vite - Backend
-- Storage SQLite - DB upgrade to Postgres coming soon
+- Storage SQLite - DB upgrade to Postgres coming soon -->
+|:--------------|:-------------|
+|Frontend       |Laravel       |
+|Backend        |React Vite    |
+|Storage        |SQLite - DB upgrade to Postgres coming soon|
+
 
 ## How to Run
 1. Fork the repo `https://github.com/WayneCarlG/todo-app.git`
