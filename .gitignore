@@ -49,5 +49,8 @@ composer.phar
  Vagrantfile
 .phpunit.result.cache
 
+#Custom Scripts
+*.sh
+
 # Optional but recommended
 /public/storage  # if you use symlink for file uploads
