@@ -1,1 +1,53 @@
-*.sh
+# Environment & Secrets
+.env
+.env.backup
+.env.*.backup
+.phpunit.result.cache
+
+# Laravel Cache & Compiled Files
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Compiled Assets & Node Modules
+/public/build
+/public/hot
+/node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# IDE & Editor Files
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Composer
+/vendor
+composer.phar
+
+# Laravel Sail (Docker)
+/docker-compose.override.yml
+
+# Testing & Coverage
+/coverage
+.phpunit.cache
+
+# Local only files
+ Homestead.yaml
+ Vagrantfile
+.phpunit.result.cache
+
+# Optional but recommended
+/public/storage  # if you use symlink for file uploads
