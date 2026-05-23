@@ -4,9 +4,10 @@
 <!-- - Laravel - Frontend
 - React Vite - Backend
 - Storage SQLite - DB upgrade to Postgres coming soon -->
-|:--------------|:-------------|
-|Frontend       |Laravel       |
-|Backend        |React Vite    |
+|Stack          |Language/Framework|
+|:--------------|:-----------------|
+|Frontend       |Laravel           |
+|Backend        |React Vite        |
 |Storage        |SQLite - DB upgrade to Postgres coming soon|
 
 
