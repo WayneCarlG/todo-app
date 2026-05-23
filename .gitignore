@@ -1,8 +1,8 @@
 # Environment & Secrets
-*.env
-*.env.backup
-*.env.*.backup
-*.phpunit.result.cache
+.env
+.env.backup
+.env.*.backup
+.phpunit.result.cache
 
 # Laravel Cache & Compiled Files
 /bootstrap/cache/*
@@ -50,7 +50,6 @@ composer.phar
 .phpunit.result.cache
 
 #Custom Scripts
-*.sh
 
 # Optional but recommended
 /public/storage  # if you use symlink for file uploads
