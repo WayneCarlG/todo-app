@@ -12,7 +12,8 @@
 1. Fork the repo `https://github.com/WayneCarlG/todo-app.git`
 2. Clone the repo with your username
 3. `cd todo-app`
-4. Run `php artisan serve`
+4. Run `php artisan migrate` to migrate the database settings
+4. Run `php artisan serve` to start the application
 5. Congratulations! Your Application is up and running
 
 ## Using The Application
